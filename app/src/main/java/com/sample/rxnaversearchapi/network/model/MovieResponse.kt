@@ -1,7 +1,8 @@
-package com.sample.rxnaversearchapi
+package com.sample.rxnaversearchapi.network.model
 
 
 import com.google.gson.annotations.SerializedName
+import com.sample.rxnaversearchapi.data.model.MovieItem
 
 data class MovieResponse(
     @SerializedName("actor")
@@ -20,4 +21,16 @@ data class MovieResponse(
     val title: String,
     @SerializedName("userRating")
     val userRating: String
-)
+) {
+    fun toMovieItem(): MovieItem =
+        MovieItem(
+            actor,
+            director,
+            image,
+            link,
+            pubDate,
+            subtitle,
+            title,
+            userRating
+        )
+}

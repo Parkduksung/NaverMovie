@@ -1,5 +1,6 @@
-package com.sample.rxnaversearchapi
+package com.sample.rxnaversearchapi.network.api
 
+import com.sample.rxnaversearchapi.network.model.MovieDataResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Header
