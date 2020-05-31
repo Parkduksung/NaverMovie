@@ -19,7 +19,7 @@ class MovieViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
 
     fun bind(item: MovieItem) {
         binding?.run {
-            setVariable(BR.VM, item)
+            setVariable(BR.movieItem, item)
             executePendingBindings()
         }
     }
