@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <data />
+    <data>
+
+        <variable
+            name="movieItem"
+            type="com.sample.rxnaversearchapi.data.model.MovieItem" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -17,7 +24,9 @@
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias=".2" />
+            app:layout_constraintVertical_bias=".2"
+            bind:setUrlImg="@{movieItem.image}"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/tv_title"
@@ -25,6 +34,7 @@
             android:layout_height="25dp"
             android:layout_marginStart="10dp"
             android:gravity="center_vertical"
+            android:text="@{movieItem.title}"
             app:layout_constraintStart_toEndOf="@id/iv_image"
             app:layout_constraintTop_toTopOf="@id/iv_image" />
 
@@ -35,7 +45,8 @@
             android:layout_marginStart="10dp"
             android:gravity="center_vertical"
             app:layout_constraintStart_toEndOf="@id/iv_image"
-            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            bind:convertHtml="@{movieItem.subtitle}" />
 
         <TextView
             android:id="@+id/tv_director"
@@ -43,6 +54,7 @@
             android:layout_height="20dp"
             android:layout_marginStart="10dp"
             android:gravity="center_vertical"
+            android:text="@{movieItem.director}"
             app:layout_constraintStart_toEndOf="@id/iv_image"
             app:layout_constraintTop_toBottomOf="@id/tv_subtitle" />
 
@@ -52,6 +64,7 @@
             android:layout_height="20dp"
             android:layout_marginStart="10dp"
             android:gravity="center_vertical"
+            android:text="@{movieItem.actor}"
             app:layout_constraintStart_toEndOf="@id/iv_image"
             app:layout_constraintTop_toBottomOf="@id/tv_director" />
 
@@ -61,10 +74,10 @@
             android:layout_height="20dp"
             android:layout_marginStart="10dp"
             android:gravity="center_vertical"
+            android:text="@{movieItem.userRating}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv_image" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

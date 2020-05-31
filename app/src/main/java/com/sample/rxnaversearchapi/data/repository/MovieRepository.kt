@@ -5,6 +5,7 @@ import com.sample.rxnaversearchapi.network.model.MovieDataResponse
 interface MovieRepository {
     fun getAllList(
         keyword: String,
-        callback: (movieDataResponse: MovieDataResponse?) -> Unit
+        onSuccess: (movieDataResponse: MovieDataResponse) -> Unit,
+        onFailure: () -> Unit
     )
 }

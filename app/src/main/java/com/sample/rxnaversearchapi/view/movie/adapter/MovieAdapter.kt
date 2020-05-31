@@ -18,14 +18,13 @@ class MovieAdapter : RecyclerView.Adapter<MovieViewHolder>() {
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) =
         holder.bind(movieList[position])
 
-
-    fun addAll(list: List<MovieItem>) {
-        movieList.addAll(list)
+    fun replaceAll(list: List<MovieItem>?) {
+        list?.let {
+            movieList.apply {
+                clear()
+                addAll(list)
+                notifyDataSetChanged()
+            }
+        }
     }
-
-    fun clear() {
-        movieList.clear()
-        notifyDataSetChanged()
-    }
-
 }

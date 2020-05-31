@@ -10,12 +10,10 @@ class MovieRemoteDataSourceImpl(
     private val movieSearchApi: MovieSearchApi
 ) : MovieRemoteDataSource {
 
-    private val CLIENT_ID = "pqu5xvOzU1qikyXi94iM"
-    private val SECRET_KEY = "i5W1ABuBft"
-
     override fun getAllList(
         keyword: String,
-        callback: (movieDataResponse: MovieDataResponse?) -> Unit
+        onSuccess: (movieDataResponse: MovieDataResponse) -> Unit,
+        onFailure: () -> Unit
     ) {
         movieSearchApi.getMovieList(CLIENT_ID, SECRET_KEY, keyword).enqueue(object :
             Callback<MovieDataResponse> {
@@ -23,12 +21,17 @@ class MovieRemoteDataSourceImpl(
                 call: Call<MovieDataResponse>,
                 response: Response<MovieDataResponse>
             ) {
-                callback(response.body())
+                response.body()?.let { onSuccess(it) }
             }
 
             override fun onFailure(call: Call<MovieDataResponse>, t: Throwable) {
-                callback(null)
+                onFailure()
             }
         })
+    }
+
+    companion object {
+        private const val CLIENT_ID = "pqu5xvOzU1qikyXi94iM"
+        private const val SECRET_KEY = "i5W1ABuBft"
     }
 }

@@ -6,8 +6,9 @@ import com.sample.rxnaversearchapi.network.model.MovieDataResponse
 class MovieRepositoryImpl(private val movieRepository: MovieRemoteDataSource) : MovieRepository {
     override fun getAllList(
         keyword: String,
-        callback: (movieDataResponse: MovieDataResponse?) -> Unit
+        onSuccess: (movieDataResponse: MovieDataResponse) -> Unit,
+        onFailure: () -> Unit
     ) {
-        movieRepository.getAllList(keyword, callback)
+        movieRepository.getAllList(keyword, onSuccess, onFailure)
     }
 }

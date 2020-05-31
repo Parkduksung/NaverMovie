@@ -17,13 +17,13 @@ class MovieViewModel(private val movieRepository: MovieRepository) : ViewModel()
 
     fun searchByKeyWord(keyWord: String?) {
         keyWord?.let {
-            movieRepository.getAllList(keyWord, callback = { movieDataResponse ->
-                movieDataResponse?.let {
+            movieRepository.getAllList(keyWord,
+                onSuccess = { movieDataResponse ->
                     val toMovieItemList =
                         movieDataResponse.toMovieDataItem().movieResponseList
                     _movieList.value = toMovieItemList
-                }
-            })
+                }, onFailure = {
+                })
         }
     }
 }
