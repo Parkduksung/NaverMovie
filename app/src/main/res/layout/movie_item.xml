@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="movieItem"
             type="com.sample.rxnaversearchapi.data.model.MovieItem" />
@@ -16,9 +17,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="H, 2.5:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -26,67 +26,64 @@
             <ImageView
                 android:id="@+id/iv_image"
                 android:layout_width="0dp"
-                android:layout_height="90dp"
-                android:layout_marginStart="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
                 app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias=".2"
                 bind:setUrlImg="@{movieItem.image}"
                 tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:layout_marginStart="10dp"
+                android:layout_height="0dp"
                 android:gravity="center_vertical"
                 android:text="@{movieItem.title}"
-                app:layout_constraintStart_toEndOf="@id/iv_image"
-                app:layout_constraintTop_toTopOf="@id/iv_image" />
+                app:layout_constraintHeight_percent=".15"
+                app:layout_constraintStart_toStartOf="@id/iv_image"
+                app:layout_constraintTop_toBottomOf="@id/iv_image" />
 
             <TextView
                 android:id="@+id/tv_subtitle"
                 android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:layout_marginStart="10dp"
+                android:layout_height="0dp"
                 android:gravity="center_vertical"
-                app:layout_constraintStart_toEndOf="@id/iv_image"
+                app:layout_constraintHeight_percent=".1"
+                app:layout_constraintStart_toStartOf="@id/iv_image"
                 app:layout_constraintTop_toBottomOf="@id/tv_title"
                 bind:convertHtml="@{movieItem.subtitle}" />
 
             <TextView
                 android:id="@+id/tv_director"
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginStart="10dp"
+                android:layout_height="0dp"
                 android:gravity="center_vertical"
                 android:text="@{movieItem.director}"
-                app:layout_constraintStart_toEndOf="@id/iv_image"
+                app:layout_constraintHeight_percent=".05"
+                app:layout_constraintStart_toStartOf="@id/iv_image"
                 app:layout_constraintTop_toBottomOf="@id/tv_subtitle" />
 
             <TextView
                 android:id="@+id/tv_actor"
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginStart="10dp"
+                android:layout_height="0dp"
                 android:gravity="center_vertical"
                 android:text="@{movieItem.actor}"
-                app:layout_constraintStart_toEndOf="@id/iv_image"
+                app:layout_constraintHeight_percent=".05"
+                app:layout_constraintStart_toStartOf="@id/iv_image"
                 app:layout_constraintTop_toBottomOf="@id/tv_director" />
 
             <TextView
                 android:id="@+id/tv_rating"
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginStart="10dp"
+                android:layout_height="0dp"
                 android:gravity="center_vertical"
                 android:text="@{movieItem.userRating}"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iv_image" />
+                app:layout_constraintHeight_percent=".05"
+                app:layout_constraintStart_toStartOf="@id/iv_image"
+                app:layout_constraintTop_toBottomOf="@id/tv_actor" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
