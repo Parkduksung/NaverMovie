@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:bind="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -13,13 +12,11 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?selectableItemBackground">
+        android:layout_height="wrap_content">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="?selectableItemBackground"
             android:onClick="@{() -> movieItem.onItemClick.invoke(movieItem)}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -33,13 +30,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="10dp"
+                android:foreground="@drawable/rect_selected"
                 android:scaleType="fitXY"
-                app:layout_constraintDimensionRatio="H, 1:1"
+                app:layout_constraintDimensionRatio="H, 3:4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                bind:setUrlImg="@{movieItem.image}"
-                tools:ignore="ContentDescription" />
+                bind:setUrlImg="@{movieItem.image}" />
 
             <RatingBar
                 android:id="@+id/rb_rating"
@@ -62,6 +59,7 @@
                 android:gravity="center_vertical"
                 android:singleLine="true"
                 android:text="@{movieItem.title}"
+                android:textColor="@drawable/selector_text"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@id/iv_image"
@@ -79,7 +77,7 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_title" />
 
             <TextView
-                android:id="@+id/tv_subtitle"
+                android:id="@+id/tv_date"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:gravity="end"

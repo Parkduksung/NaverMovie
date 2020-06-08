@@ -1,9 +1,9 @@
-package com.sample.rxnaversearchapi.view.movie.adapter
+package com.sample.rxnaversearchapi.view.movie.main.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.sample.rxnaversearchapi.data.model.MovieItem
-import com.sample.rxnaversearchapi.view.movie.adapter.viewholder.MovieViewHolder
+import com.sample.rxnaversearchapi.view.movie.main.adapter.viewholder.MovieViewHolder
 
 class MovieAdapter : RecyclerView.Adapter<MovieViewHolder>() {
 

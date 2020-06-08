@@ -3,7 +3,7 @@ package com.sample.rxnaversearchapi.ext
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.sample.rxnaversearchapi.data.model.MovieItem
-import com.sample.rxnaversearchapi.view.movie.adapter.MovieAdapter
+import com.sample.rxnaversearchapi.view.movie.main.adapter.MovieAdapter
 
 @BindingAdapter("bind:replaceAll")
 fun RecyclerView.replaceAll(list: List<MovieItem>?) {
