@@ -9,6 +9,7 @@ import com.sample.rxnaversearchapi.R
 fun ImageView.setUrlImg(url: String?) {
     Glide.with(context)
         .load(url)
+        .centerCrop()
         .error(R.drawable.alternative_image_until_not_bring)
         .into(this)
 }

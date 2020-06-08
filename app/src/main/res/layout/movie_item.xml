@@ -13,78 +13,82 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="?selectableItemBackground"
+            android:onClick="@{() -> movieItem.onItemClick.invoke(movieItem)}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
 
             <ImageView
                 android:id="@+id/iv_image"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="10dp"
-                app:layout_constraintDimensionRatio="1:1"
+                android:scaleType="fitXY"
+                app:layout_constraintDimensionRatio="H, 1:1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 bind:setUrlImg="@{movieItem.image}"
                 tools:ignore="ContentDescription" />
 
+            <RatingBar
+                android:id="@+id/rb_rating"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isIndicator="true"
+                android:max="10"
+                android:numStars="5"
+                android:secondaryProgressTint="#00000000"
+                android:stepSize="0.01"
+                app:layout_constraintStart_toStartOf="@id/iv_image"
+                app:layout_constraintTop_toBottomOf="@id/iv_image"
+                bind:setRating="@{movieItem.userRating}" />
+
             <TextView
                 android:id="@+id/tv_title"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:gravity="center_vertical"
+                android:singleLine="true"
                 android:text="@{movieItem.title}"
-                app:layout_constraintHeight_percent=".15"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/iv_image"
+                app:layout_constraintHeight_percent=".1"
                 app:layout_constraintStart_toStartOf="@id/iv_image"
-                app:layout_constraintTop_toBottomOf="@id/iv_image" />
+                app:layout_constraintTop_toBottomOf="@id/rb_rating" />
+
+            <View
+                android:id="@+id/title_divide_line"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorLeanGray"
+                app:layout_constraintEnd_toEndOf="@id/iv_image"
+                app:layout_constraintStart_toStartOf="@id/iv_image"
+                app:layout_constraintTop_toBottomOf="@id/tv_title" />
 
             <TextView
                 android:id="@+id/tv_subtitle"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:gravity="center_vertical"
+                android:gravity="end"
+                android:text="@{movieItem.pubDate}"
+                android:textColor="@color/colorGray"
+                app:layout_constraintEnd_toEndOf="@id/iv_image"
                 app:layout_constraintHeight_percent=".1"
                 app:layout_constraintStart_toStartOf="@id/iv_image"
-                app:layout_constraintTop_toBottomOf="@id/tv_title"
-                bind:convertHtml="@{movieItem.subtitle}" />
-
-            <TextView
-                android:id="@+id/tv_director"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:gravity="center_vertical"
-                android:text="@{movieItem.director}"
-                app:layout_constraintHeight_percent=".05"
-                app:layout_constraintStart_toStartOf="@id/iv_image"
-                app:layout_constraintTop_toBottomOf="@id/tv_subtitle" />
-
-            <TextView
-                android:id="@+id/tv_actor"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:gravity="center_vertical"
-                android:text="@{movieItem.actor}"
-                app:layout_constraintHeight_percent=".05"
-                app:layout_constraintStart_toStartOf="@id/iv_image"
-                app:layout_constraintTop_toBottomOf="@id/tv_director" />
-
-            <TextView
-                android:id="@+id/tv_rating"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:gravity="center_vertical"
-                android:text="@{movieItem.userRating}"
-                app:layout_constraintHeight_percent=".05"
-                app:layout_constraintStart_toStartOf="@id/iv_image"
-                app:layout_constraintTop_toBottomOf="@id/tv_actor" />
+                app:layout_constraintTop_toBottomOf="@id/title_divide_line" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

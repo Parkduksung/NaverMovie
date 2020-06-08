@@ -1,7 +1,9 @@
 package com.sample.rxnaversearchapi.network.model
 
 
+import android.widget.Toast
 import com.google.gson.annotations.SerializedName
+import com.sample.rxnaversearchapi.App
 import com.sample.rxnaversearchapi.data.model.MovieItem
 
 data class MovieResponse(
@@ -31,6 +33,9 @@ data class MovieResponse(
             pubDate,
             subtitle,
             title,
-            userRating
+            userRating,
+            onItemClick = {
+                Toast.makeText(App.instance.context(), it.link, Toast.LENGTH_SHORT).show()
+            }
         )
 }

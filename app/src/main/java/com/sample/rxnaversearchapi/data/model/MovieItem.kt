@@ -8,5 +8,6 @@ data class MovieItem(
     val pubDate: String,
     val subtitle: String,
     val title: String,
-    val userRating: String
+    val userRating: String,
+    val onItemClick: (MovieItem) -> Unit
 )
