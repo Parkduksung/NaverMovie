@@ -1,34 +1,20 @@
 package com.sample.rxnaversearchapi.view.movie.details
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
 import com.sample.rxnaversearchapi.R
+import com.sample.rxnaversearchapi.base.BaseFragment
 import com.sample.rxnaversearchapi.databinding.FragmentMovieDetailsBinding
 import com.sample.rxnaversearchapi.viewmodel.MovieDetailsViewModel
 import org.koin.android.ext.android.get
 
-class MovieDetailsFragment : Fragment() {
+class MovieDetailsFragment :
+    BaseFragment<FragmentMovieDetailsBinding>(R.layout.fragment_movie_details) {
 
     private lateinit var viewModel: MovieDetailsViewModel
-    private lateinit var binding: FragmentMovieDetailsBinding
 
     private val identifier by lazy {
         arguments?.getString(MOVIE_ITEM_IDENTIFIER)
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_movie_details, container, false)
-        binding.lifecycleOwner = this
-        return binding.root
     }
 
 
@@ -40,7 +26,6 @@ class MovieDetailsFragment : Fragment() {
             identifier?.let { identifier ->
                 viewModel.request(identifier)
             }
-
         }
     }
 
