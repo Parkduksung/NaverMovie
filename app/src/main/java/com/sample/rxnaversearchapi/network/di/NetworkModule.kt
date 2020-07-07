@@ -23,4 +23,5 @@ val networkModule = module {
             .build()
     }
     single<Converter.Factory> { GsonConverterFactory.create() }
+
 }

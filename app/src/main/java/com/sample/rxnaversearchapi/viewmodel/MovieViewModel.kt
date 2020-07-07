@@ -37,4 +37,5 @@ class MovieViewModel(private val movieRepository: MovieRepository) : ViewModel()
                 })
         }
     }
+
 }

@@ -40,6 +40,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.2.0-alpha02'
     implementation "androidx.fragment:fragment-ktx:1.2.4"
 
+    //retrofit2
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
 
@@ -54,6 +55,7 @@ dependencies {
     implementation 'org.koin:koin-androidx-scope:2.0.1'
     implementation 'org.koin:koin-androidx-ext:2.0.1'
 
+    //recyclerview
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
 }

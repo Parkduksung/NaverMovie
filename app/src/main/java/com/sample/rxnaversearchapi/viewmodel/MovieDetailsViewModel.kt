@@ -8,7 +8,6 @@ class MovieDetailsViewModel : ViewModel() {
 
     fun request(movieItemUrl: String) {
         Toast.makeText(App.instance.context(), movieItemUrl, Toast.LENGTH_SHORT).show()
-
     }
 
 
