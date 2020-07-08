@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">RxNaverSearchApi</string>
+
     <string name="search">검색</string>
+
+    <string name="hint_movie_search">영화 제목을 입력하세요</string>
 </resources>

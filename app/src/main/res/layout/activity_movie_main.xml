@@ -25,30 +25,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
-        <com.sample.rxnaversearchapi.util.EditTextWithClear
-            android:id="@+id/edt_search"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:hint="영화 제목을 입력하세요"
-            android:imeActionLabel="완료"
-            android:imeOptions="actionDone"
+        <com.sample.rxnaversearchapi.custom.EditTextWithClear
+            android:id="@+id/etc_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/bg_search"
+            android:drawablePadding="5dp"
+            android:hint="@string/hint_movie_search"
+            android:imeOptions="actionSearch"
             android:inputType="text"
             android:maxLines="1"
+            android:padding="15dp"
             android:text="@={VM.keyWord}"
-            app:layout_constraintBottom_toBottomOf="@id/btn_search"
-            app:layout_constraintEnd_toStartOf="@id/btn_search"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/btn_search"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="@{ _ -> VM.searchByKeyWord(VM.keyWord)}"
-            android:text="@string/search"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:onEditorEnterAction="@{VM.search}" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_movie"
@@ -59,7 +50,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_search"
+            app:layout_constraintTop_toBottomOf="@id/etc_search"
             app:spanCount="2"
             bind:replaceAll="@{VM.movieList}"
             tools:listitem="@layout/item_movie" />

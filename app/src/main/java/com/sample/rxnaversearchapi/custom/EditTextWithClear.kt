@@ -1,4 +1,4 @@
-package com.sample.rxnaversearchapi.util
+package com.sample.rxnaversearchapi.custom
 
 import android.content.Context
 import android.graphics.drawable.Drawable
@@ -14,6 +14,7 @@ import com.sample.rxnaversearchapi.R
 class EditTextWithClear : AppCompatEditText {
 
     private lateinit var clearDrawable: Drawable
+    private lateinit var searchDrawable: Drawable
 
     constructor(context: Context) : super(context) {
         operateCustom()
@@ -32,12 +33,16 @@ class EditTextWithClear : AppCompatEditText {
     }
 
     private fun operateCustom() {
+        setClearIconVisible(false)
+
         addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {
                 setClearIconVisible(s.isNotEmpty())
             }
+
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }
+
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
             }
         })
@@ -56,13 +61,23 @@ class EditTextWithClear : AppCompatEditText {
     private fun setClearIcon() {
         clearDrawable = ResourcesCompat.getDrawable(
             resources,
-            R.drawable.ic_clear_black_24dp, null
+            R.drawable.ic_clear, null
         )!!
     }
+
+    private fun setSearchIcon() {
+        searchDrawable = ResourcesCompat.getDrawable(
+            resources,
+            R.drawable.ic_search, null
+        )!!
+
+    }
+
     private fun setClearIconVisible(visible: Boolean) {
+        setSearchIcon()
         setClearIcon()
         setCompoundDrawablesRelativeWithIntrinsicBounds(
-            null,
+            searchDrawable,
             null,
             if (visible) clearDrawable else null,
             null

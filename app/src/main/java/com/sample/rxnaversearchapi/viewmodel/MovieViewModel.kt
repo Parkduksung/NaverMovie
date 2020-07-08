@@ -15,7 +15,6 @@ class MovieViewModel(private val movieRepository: MovieRepository) : ViewModel()
     val movieList: LiveData<List<MovieItem>>
         get() = _movieList
 
-
     private val itemClick: (MovieItem) -> Unit = {
         _clickMovieIdentifier.value = it
     }
@@ -23,6 +22,8 @@ class MovieViewModel(private val movieRepository: MovieRepository) : ViewModel()
     private val _clickMovieIdentifier = MutableLiveData<MovieItem>()
     val clickMovieIdentifier: LiveData<MovieItem>
         get() = _clickMovieIdentifier
+
+    val search: Function1<String, Unit> = this::searchByKeyWord
 
     fun searchByKeyWord(keyWord: String?) {
         keyWord?.let {
@@ -39,3 +40,4 @@ class MovieViewModel(private val movieRepository: MovieRepository) : ViewModel()
     }
 
 }
+
