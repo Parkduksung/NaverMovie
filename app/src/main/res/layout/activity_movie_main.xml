@@ -38,14 +38,18 @@
             android:maxLines="1"
             android:padding="15dp"
             android:text="@={VM.keyWord}"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias=".01"
             app:onEditorEnterAction="@{VM.search}" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_movie"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_marginTop="@dimen/gap_between_search_reyclerview"
             android:clipToPadding="false"
+            android:overScrollMode="never"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

@@ -22,7 +22,6 @@ fun EditText.onEditorEnterAction(f: Function1<String, Unit>?) {
         val keyDownEvent = event?.keyCode == KeyEvent.KEYCODE_ENTER
                 || event?.action == KeyEvent.ACTION_DOWN
 
-        // Return true if action is consumed, otherwise false.
         if (imeAction or keyDownEvent)
             true.also { f(v.editableText.toString()) }
         else false
