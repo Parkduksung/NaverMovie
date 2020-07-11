@@ -15,7 +15,7 @@ class MovieRemoteDataSourceImpl(
         onSuccess: (movieDataResponse: MovieDataResponse) -> Unit,
         onFailure: () -> Unit
     ) {
-        movieSearchApi.getMovieList(CLIENT_ID, SECRET_KEY, keyword).enqueue(object :
+        movieSearchApi.getMovieList(keyword).enqueue(object :
             Callback<MovieDataResponse> {
             override fun onResponse(
                 call: Call<MovieDataResponse>,
@@ -30,8 +30,4 @@ class MovieRemoteDataSourceImpl(
         })
     }
 
-    companion object {
-        private const val CLIENT_ID = "pqu5xvOzU1qikyXi94iM"
-        private const val SECRET_KEY = "i5W1ABuBft"
-    }
 }
