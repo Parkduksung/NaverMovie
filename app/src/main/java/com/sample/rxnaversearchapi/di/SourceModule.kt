@@ -1,4 +1,4 @@
-package com.sample.rxnaversearchapi.data.di
+package com.sample.rxnaversearchapi.di
 
 import com.sample.rxnaversearchapi.data.source.remote.MovieRemoteDataSource
 import com.sample.rxnaversearchapi.data.source.remote.MovieRemoteDataSourceImpl

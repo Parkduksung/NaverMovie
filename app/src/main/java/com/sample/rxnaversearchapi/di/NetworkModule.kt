@@ -1,4 +1,4 @@
-package com.sample.rxnaversearchapi.network.di
+package com.sample.rxnaversearchapi.di
 
 import com.sample.rxnaversearchapi.network.api.MovieSearchApi
 import okhttp3.Interceptor

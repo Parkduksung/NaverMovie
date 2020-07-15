@@ -1,4 +1,4 @@
-package com.sample.rxnaversearchapi.data.di
+package com.sample.rxnaversearchapi.di
 
 import com.sample.rxnaversearchapi.data.repository.MovieRepository
 import com.sample.rxnaversearchapi.data.repository.MovieRepositoryImpl

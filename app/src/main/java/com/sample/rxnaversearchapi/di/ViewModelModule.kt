@@ -1,4 +1,4 @@
-package com.sample.rxnaversearchapi.viewmodel.di
+package com.sample.rxnaversearchapi.di
 
 import com.sample.rxnaversearchapi.viewmodel.MovieDetailsViewModel
 import com.sample.rxnaversearchapi.viewmodel.MovieViewModel
