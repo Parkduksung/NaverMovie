@@ -1,4 +1,4 @@
-package com.sample.rxnaversearchapi.view.movie.main.adapter.viewholder
+package com.sample.rxnaversearchapi.presenter.movie.viewholder
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -1,5 +1,6 @@
 package com.sample.rxnaversearchapi.base
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +15,7 @@ abstract class BaseFragment<B : ViewDataBinding>(@LayoutRes private val layoutId
 
     protected lateinit var binding: B
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

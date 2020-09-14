@@ -1,4 +1,4 @@
-package com.sample.rxnaversearchapi.view.movie.main
+package com.sample.rxnaversearchapi.presenter.movie
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,8 +6,7 @@ import androidx.lifecycle.Observer
 import com.sample.rxnaversearchapi.R
 import com.sample.rxnaversearchapi.base.BaseActivity
 import com.sample.rxnaversearchapi.databinding.ActivityMovieMainBinding
-import com.sample.rxnaversearchapi.view.movie.details.MovieDetailsFragment
-import com.sample.rxnaversearchapi.view.movie.main.adapter.MovieAdapter
+import com.sample.rxnaversearchapi.presenter.movie.adapter.MovieAdapter
 import com.sample.rxnaversearchapi.viewmodel.MovieViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

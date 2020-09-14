@@ -1,16 +1,16 @@
-package com.sample.rxnaversearchapi.view.movie.main.adapter
+package com.sample.rxnaversearchapi.presenter.movie.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.sample.rxnaversearchapi.data.model.MovieItem
-import com.sample.rxnaversearchapi.view.movie.main.adapter.viewholder.MovieViewHolder
+import com.sample.rxnaversearchapi.presenter.movie.viewholder.MovieViewHolder
 
 class MovieAdapter : RecyclerView.Adapter<MovieViewHolder>() {
 
     private val movieList = mutableListOf<MovieItem>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder =
-        MovieViewHolder(parent)
+            MovieViewHolder(parent)
 
     override fun getItemCount(): Int =
         movieList.size

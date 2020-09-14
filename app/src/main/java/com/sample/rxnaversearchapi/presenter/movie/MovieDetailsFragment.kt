@@ -1,4 +1,4 @@
-package com.sample.rxnaversearchapi.view.movie.details
+package com.sample.rxnaversearchapi.presenter.movie
 
 import android.os.Bundle
 import android.view.View

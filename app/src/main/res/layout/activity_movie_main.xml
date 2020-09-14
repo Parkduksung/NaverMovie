@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="VM"
             type="com.sample.rxnaversearchapi.viewmodel.MovieViewModel" />
