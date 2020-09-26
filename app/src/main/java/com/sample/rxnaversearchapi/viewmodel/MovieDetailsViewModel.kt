@@ -10,5 +10,4 @@ class MovieDetailsViewModel : ViewModel() {
         Toast.makeText(App.instance.context(), movieItemUrl, Toast.LENGTH_SHORT).show()
     }
 
-
 }
