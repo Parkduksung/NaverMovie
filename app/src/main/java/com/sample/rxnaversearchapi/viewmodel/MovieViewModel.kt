@@ -1,5 +1,6 @@
 package com.sample.rxnaversearchapi.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -37,6 +38,16 @@ class MovieViewModel(private val movieRepository: MovieRepository) : ViewModel()
                 }, onFailure = {
                 })
         }
+    }
+
+    fun check(email: String, pass: String) {
+
+        movieRepository.getUser(email, pass,
+            onSuccess = {
+                Log.d("결과", it.email.orEmpty())
+            }, onFailure = {
+
+            })
     }
 
 }

@@ -1,6 +1,7 @@
 package com.sample.rxnaversearchapi.di
 
 import com.sample.rxnaversearchapi.network.api.MovieSearchApi
+import com.sample.rxnaversearchapi.network.api.UserApi
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import org.koin.core.parameter.parametersOf
@@ -30,6 +31,15 @@ val networkModule = module {
             .create(MovieSearchApi::class.java)
     }
 
+    single<UserApi> {
+        Retrofit.Builder()
+            .baseUrl("http://3.35.154.27:3000")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(UserApi::class.java)
+    }
+
+
     factory<Retrofit> { (url: String, interceptor: Interceptor) ->
         Retrofit.Builder()
             .baseUrl(url)
@@ -37,6 +47,7 @@ val networkModule = module {
             .client(get<OkHttpClient> { parametersOf(interceptor) })
             .build()
     }
+
 
     single<Converter.Factory> { GsonConverterFactory.create() }
 

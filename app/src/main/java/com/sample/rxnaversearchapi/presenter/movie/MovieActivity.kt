@@ -26,7 +26,10 @@ class MovieActivity : BaseActivity<ActivityMovieMainBinding>(R.layout.activity_m
             clickMovieIdentifier.observe(this@MovieActivity, Observer { movieItem ->
                 showFragment(MovieDetailsFragment.newInstance(movieItem.link))
             })
+
+            check("rkdcjf0122@naver.com", "qlalfqjsgh")
         }
+
     }
 
     private fun showFragment(fragment: Fragment) {

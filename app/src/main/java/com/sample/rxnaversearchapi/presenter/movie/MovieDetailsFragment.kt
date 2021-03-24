@@ -27,6 +27,7 @@ class MovieDetailsFragment :
                 viewModel.request(identifier)
             }
         }
+
     }
 
     companion object {

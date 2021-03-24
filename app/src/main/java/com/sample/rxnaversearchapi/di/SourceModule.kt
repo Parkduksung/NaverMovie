@@ -5,5 +5,5 @@ import com.sample.rxnaversearchapi.data.source.remote.MovieRemoteDataSourceImpl
 import org.koin.dsl.module
 
 val sourceModule = module {
-    single<MovieRemoteDataSource> { MovieRemoteDataSourceImpl(get()) }
+    single<MovieRemoteDataSource> { MovieRemoteDataSourceImpl(get(),get()) }
 }
